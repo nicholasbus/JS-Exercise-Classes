@@ -146,6 +146,13 @@ class Airplane {
   grade(student, subject){
     return `${student.name} receives a perfect score on ${subject}`;
   }
+  updateGrade(student){ //stretch task
+    if(Math.round(Math.random()) === 1){
+      student.grade += Math.round(Math.random() * 10);
+    } else {
+      student.grade -= Math.round(Math.random() * 10);
+    }
+  }
  }
   /*
     TASK 5
@@ -168,6 +175,7 @@ class Airplane {
        this.previousBackground = attrs.previousBackground;
        this.className = attrs.className;
        this.favSubjects = attrs.favSubjects;
+       this.grade = Math.round(Math.random() * 100); // stretch task
      }
      listSubjects(){
        return `Loving ${this.favSubjects[0]}, ${this.favSubjects[1]}, ${this.favSubjects[2]}!`;       
@@ -177,6 +185,13 @@ class Airplane {
      }
      sprintChallenge(subject){
       return `${this.name} has begun sprint challenge on ${subject}`;
+     }
+     graduate(){
+       if(this.grade > 70){
+         return `${this.name} is ready to graduate!`;
+       } else {
+         return `${this.name} isn't quite ready to graduate.`;
+       }
      }
  }
   
